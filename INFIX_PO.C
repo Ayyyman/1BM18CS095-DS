@@ -30,7 +30,7 @@ int priority(char x)
 
 
 
-int main()
+void main()
 {
 	char expre[20];
 	char *e,x;
@@ -64,5 +64,5 @@ int main()
 		printf("%c ", pop());
 	}
         getch();
-	return 0;
+
 }
