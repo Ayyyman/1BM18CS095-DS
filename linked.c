@@ -62,14 +62,60 @@ NODE insert_end(NODE head,int item)
 	 return head;
 }
 
+NODE insert_pos(NODE head,int item,int pos)
+{
+	NODE curr,prev=NULL,newn;
+	int count=1;
+	newn=getnode();
+	newn->data=item;
+	newn->next=NULL;
+	if(head==NULL)
+	{
+		if(pos==1)
+			return newn;
+		else
+		{
+			printf("Invalid position\n");
+			return 0;
+		}
+	}
+	if(pos==1)
+	{
+		newn->next=head;
+		head=newn;
+		return head;
+	}
+	else
+	{
+		curr=head;
+		while(curr!=NULL&&count!=pos)
+		{
+			prev=curr;
+			curr=curr->next;
+			count++;
+		}
+		if(count==pos)
+		{
+			prev->next=newn;
+			newn->next=curr;
+			return head;
+		}
+		else
+		{
+			printf("Invalid position\n");
+			return head;
+		}
+	}
+}
+
 void main()
 {
 	NODE head=NULL;
-	int option,ele,value;
+	int option,ele,pos,value;
 	while(1)
 	{
  	 printf("\n------MENU------\n");
-	 printf("\n1)Insert Front\n2)Insert End\n3)Display\n4)Exit\n");
+	 printf("\n1)Insert Front\n2)Insert End\n3)Position\n4)Display\n5)Exit\n");
 	 printf("Enter option:");
 	 scanf("%d",&option);
 	 switch(option)
@@ -83,12 +129,17 @@ void main()
 			scanf("%d",&ele);
 			head=insert_end(head,ele);
 			break;
-		
-		case 3: printf("Elements in list are\n");
+			 
+		case 3:printf("Enetr pos and value\n");
+			scanf("%d%d",&pos,&value);
+			head=insert_pos(head,value,pos);
+			break;
+			 
+		case 4: printf("Elements in list are\n");
 			display(head);
 			break;
 
-		case 4: exit(0);
+		case 5: exit(0);
 			break;
 
 		default: printf("Invalid choice");
