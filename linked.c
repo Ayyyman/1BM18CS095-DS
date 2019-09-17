@@ -130,7 +130,7 @@ void main()
 			head=insert_end(head,ele);
 			break;
 			 
-		case 3:printf("Enetr pos and value\n");
+		case 3:printf("Enter pos and value\n");
 			scanf("%d%d",&pos,&value);
 			head=insert_pos(head,value,pos);
 			break;
