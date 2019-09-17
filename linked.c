@@ -70,7 +70,7 @@ void main()
 	{
  	 printf("\n------MENU------\n");
 	 printf("\n1)Insert Front\n2)Insert End\n3)Display\n4)Exit\n");
-	 printf("Enter option\n");
+	 printf("Enter option:");
 	 scanf("%d",&option);
 	 switch(option)
 	  {
