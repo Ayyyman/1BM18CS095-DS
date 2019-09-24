@@ -155,7 +155,10 @@ void main()
                 break;   
 
             case 4:
-                exit(1);		
+                exit(1);	
+            default: printf("Invalid choice");
+                break;
+                   
         }
     }
 }
