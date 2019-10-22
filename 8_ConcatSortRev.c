@@ -138,29 +138,38 @@ int main()
 		printf("7.exit\n");
 		scanf("%d",&a);
    		switch(a)
-       		{
-         case 1: printf("Enter the element to be inserted: ");
+       	 	{
+
+          case 1: printf("Enter the element to be inserted: ");
                  scanf("%d",&value);
                  first1=insert_end(first1,value);
+		 display(first1);
                  break;
-         case 2: printf("Enter the element to be inserted: ");
+
+          case 2: printf("Enter the element to be inserted: ");
                  scanf("%d",&value);
                  first2=insert_end(first2,value);
+		 display(first2);
                  break;
+
           case 3: first1=sort(first1);
           	  display(first1);
           	  break;
+
+	  case 4:  first2=sort(first2);
+          	  display(first2);
+          	  break;
+
           case 5: first1=merging(first1,first2);
           	  display(first1);
           	  break;
-         case 4:  first2=sort(first2);
-          	  display(first2);
-          	  break;
-         case 6: first1=reverse(first1);
+
+          case 6: first1=reverse(first1);
           	  	display(first1);
           	  	break;
       
-         case 7: exit(0);
+          case 7: exit(0);
+
          default: printf("Invalid choice\n");
        }
     }
